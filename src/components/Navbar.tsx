@@ -3,13 +3,13 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <Stack>
+    <Stack p={3}>
       <HStack>
         <Link href={"/"}>
           <Button>Anasayfa</Button>
         </Link>
         <Link href={"/addlist"}>
-          <Button>Anasayfa</Button>
+          <Button>Yorum Yaz</Button>
         </Link>
       </HStack>
     </Stack>

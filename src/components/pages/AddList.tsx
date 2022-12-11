@@ -7,7 +7,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CommentStore from "../../../store/CommentStore";
 import ButtonComponent from "../shared/ButtonCompoennt";
 import InputComponent from "../shared/InputComponent";
@@ -18,8 +18,18 @@ function AddList() {
     name: "",
     surname: "",
     comment: "",
+    date: null,
   });
-  console.log(data);
+
+  useEffect(() => {
+    let yourDate = new Date();
+    yourDate.toISOString().split("T")[0];
+    const offset = yourDate.getTimezoneOffset();
+    yourDate = new Date(yourDate.getTime() - offset * 60 * 1000);
+    setData({ ...data, ["date"]: yourDate.toISOString().split("T")[0] });
+  }, []);
+
+  // setData({ ...data, ["date"]: yourDate });
   const handleSubmit = () => {
     CommentStore.setComment(data);
   };

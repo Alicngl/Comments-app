@@ -5,7 +5,6 @@ import CommentList from "../components/pages/CommentList";
 
 const Index = () => (
   <Stack>
-    <Navbar />
     <Stack>
       <Hero title="Comments App" />
       <CommentList />

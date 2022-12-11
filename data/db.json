@@ -7,16 +7,25 @@
       "id": 1
     },
     {
-      "name": "aasdasd",
-      "surname": "dsd",
-      "comment": "asdssdsdsd",
+      "name": "ali",
+      "surname": "cangül",
+      "comment": "merhaba bugün frontend çalışıyorum",
+      "date": "2022-12-11",
       "id": 2
+    }
+  ],
+  "answers": [
+    {
+      "name": "a",
+      "surname": "dsd",
+      "comment": "asd",
+      "id": 1
     },
     {
-      "name": "jahDKAJSHD",
-      "surname": "JHBASDFJHBASD",
-      "comment": "JHBASDJAHBSDV",
-      "id": 3
+      "name": "a",
+      "surname": "a",
+      "answer": "a",
+      "id": 2
     }
   ]
 }
