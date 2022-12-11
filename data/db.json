@@ -4,21 +4,24 @@
       "name": "a",
       "surname": "dsd",
       "comment": "asd",
+      "like": 1,
+      "date": "2022-12-11",
       "id": 1
     },
     {
-      "name": "ali",
-      "surname": "cangül",
-      "comment": "merhaba bugün frontend çalışıyorum",
+      "name": "a",
+      "surname": "dsd",
+      "comment": "asd",
+      "like": 0,
       "date": "2022-12-11",
       "id": 2
     },
     {
-      "name": "asd",
-      "surname": "asd",
+      "name": "a",
+      "surname": "dsd",
       "comment": "asd",
-      "date": "2022-12-11",
       "like": 0,
+      "date": "2022-12-11",
       "id": 3
     }
   ],

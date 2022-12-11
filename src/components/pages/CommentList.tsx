@@ -29,7 +29,7 @@ function CommentList() {
     answer: "",
   });
   const [like, setLike] = useState(0);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -39,7 +39,7 @@ function CommentList() {
     });
   }, []);
   const handleLike = (x) => {
-    if (id === x) {
+    if (id === x.id) {
       if (like === 1) {
         return "#333";
       } else {
@@ -50,6 +50,7 @@ function CommentList() {
   const handleAnswers = () => {
     CommentStore.setAnswers(answers);
   };
+  console.log(id, "asdasdasd");
 
   return (
     <Stack w={"full"} align="center">
@@ -77,11 +78,15 @@ function CommentList() {
                 <Stack>
                   <StarIcon
                     fontSize={"2xl"}
-                    color={handleLike(x.id)}
-                    onClick={() => {
+                    color={x.like === 0 ? "#fff" : "#333"}
+                    onClick={async () => {
                       setLike(like === 0 ? like + 1 : like - 1);
                       setId(x.id);
-                      console.log(x.id, "id");
+                      if (id) {
+                        //@ts-ignore
+                        return await CommentStore.putLike(like, id, x);
+                      }
+                      console.log(x, "id");
                     }}
                   />
                 </Stack>
