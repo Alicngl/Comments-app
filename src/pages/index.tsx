@@ -16,12 +16,13 @@ import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 import AddList from "../components/pages/AddList";
+import Navbar from "../components/Navbar";
 
 const Index = () => (
   <Stack>
+    <Navbar />
     <Stack>
       <Hero title="Comments App" />
-      <AddList />
     </Stack>
   </Stack>
 );
