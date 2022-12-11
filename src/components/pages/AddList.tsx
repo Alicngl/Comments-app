@@ -19,6 +19,7 @@ function AddList() {
     surname: "",
     comment: "",
     date: null,
+    like: 0,
   });
 
   useEffect(() => {
@@ -33,6 +34,7 @@ function AddList() {
   const handleSubmit = () => {
     CommentStore.setComment(data);
   };
+  console.log(data, "DATA");
 
   return (
     <Stack w={"full"} align="center">

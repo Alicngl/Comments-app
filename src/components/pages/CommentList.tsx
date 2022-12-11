@@ -28,7 +28,9 @@ function CommentList() {
     surname: "",
     answer: "",
   });
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useState(0);
+  const [id, setId] = useState(1);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
@@ -36,11 +38,13 @@ function CommentList() {
       setData(await res.json());
     });
   }, []);
-  const handleLike = () => {
-    if (like === false) {
-      return "#fff";
-    } else {
-      return "#333";
+  const handleLike = (x) => {
+    if (id === x) {
+      if (like === 1) {
+        return "#333";
+      } else {
+        return "#fff";
+      }
     }
   };
   const handleAnswers = () => {
@@ -70,7 +74,18 @@ function CommentList() {
                 <Text fontSize={"xl"}> {x.comment}</Text>
               </Stack>
               <HStack justifyContent={"space-between"}>
-                <StarIcon color={handleLike()} onClick={() => setLike(true)} />
+                <Stack>
+                  <StarIcon
+                    fontSize={"2xl"}
+                    color={handleLike(x.id)}
+                    onClick={() => {
+                      setLike(like === 0 ? like + 1 : like - 1);
+                      setId(x.id);
+                      console.log(x.id, "id");
+                    }}
+                  />
+                </Stack>
+
                 <Button size={"xs"} onClick={onOpen}>
                   yanıtla
                 </Button>

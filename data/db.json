@@ -12,6 +12,14 @@
       "comment": "merhaba bugün frontend çalışıyorum",
       "date": "2022-12-11",
       "id": 2
+    },
+    {
+      "name": "asd",
+      "surname": "asd",
+      "comment": "asd",
+      "date": "2022-12-11",
+      "like": 0,
+      "id": 3
     }
   ],
   "answers": [
